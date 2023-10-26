@@ -95,4 +95,39 @@ public class pila {
             }
         }
     }
+    public float sacarpromedio(){
+        float suma = 0;
+        float promedio = 0;
+        for (productos sum : pila){
+            suma = sum.precio + suma;
+        }
+        promedio = suma / pila.size();
+        return promedio;
+    }
+    public void menorprom(){
+        float promedio = sacarpromedio();
+        for(productos menor : pila){
+            if(menor.precio < promedio){
+                JOptionPane.showMessageDialog(null, "Los productos con un precio menor al promedio son:\n"
+                                                    + "ID: " + menor.idprodu + "\n"
+                                                    + "Nombre: " + menor.nomprodu + "\n"
+                                                    + "Fecha lote: " + menor.lote + "\n"
+                                                    + "Fecha vencimiento: " + menor.vence + "\n"
+                                                    + "Precio: " + menor.precio);
+            }
+        }
+    }
+    public void mayorprom(){
+        float promedio = sacarpromedio();
+        for(productos mayor : pila){
+            if(mayor.precio > promedio){
+                JOptionPane.showMessageDialog(null, "Los productos con un precio menor al promedio son:\n"
+                                                    + "ID: " + mayor.idprodu + "\n"
+                                                    + "Nombre: " + mayor.nomprodu + "\n"
+                                                    + "Fecha lote: " + mayor.lote + "\n"
+                                                    + "Fecha vencimiento: " + mayor.vence + "\n"
+                                                    + "Precio: " + mayor.precio);
+            }
+        }
+    }
 }
