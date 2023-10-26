@@ -50,4 +50,49 @@ public class pila {
         nombreb = null;
         return nombreb;
     }
+    public void buscarFechal(String fechal){
+        productos fechalb = new productos();
+        int i = 0;
+        while(i<pila.size()){
+            fechalb = (productos) pila.get(i);
+            if(fechalb.lote.equals(fechal)){
+                JOptionPane.showMessageDialog(null, "El producto con la fecha lote buscada es:\n"
+                                                    + "ID: " + fechalb.idprodu + "\n"
+                                                    + "Nombre: " + fechalb.nomprodu + "\n"
+                                                    + "Fecha lote: " + fechalb.lote + "\n"
+                                                    + "Fecha vencimiento: " + fechalb.vence + "\n"
+                                                    + "Precio: " + fechalb.precio);
+            }
+        }
+    }
+    public void buscarFechav(String fechav){
+        productos venceb = new productos();
+        int i = 0;
+        while(i<pila.size()){
+            venceb = (productos) pila.get(i);
+            if(venceb.vence.equals(fechav)){
+                JOptionPane.showMessageDialog(null, "El producto con la fecha de vencimiento buscada es:\n"
+                                                    + "ID: " + venceb.idprodu + "\n"
+                                                    + "Nombre: " + venceb.nomprodu + "\n"
+                                                    + "Fecha lote: " + venceb.lote + "\n"
+                                                    + "Fecha vencimiento: " + venceb.vence + "\n"
+                                                    + "Precio: " + venceb.precio);
+            }
+        }
+    }
+    public void buscarprecio(float precio){
+        productos preciob = new productos();
+        int i = 0;
+        while(i<pila.size()){
+            preciob = (productos) pila.get(i);
+            if(preciob.precio == precio){
+                JOptionPane.showMessageDialog(null, "El producto con el precio buscado es:\n"
+                                                    + "ID: " + preciob.idprodu + "\n"
+                                                    + "Nombre: " + preciob.nomprodu + "\n"
+                                                    + "Fecha lote: " + preciob.lote + "\n"
+                                                    + "Fecha vencimiento: " + preciob.vence + "\n"
+                                                    + "Precio: " + preciob.precio);
+            }
+        }
+    }
 }
