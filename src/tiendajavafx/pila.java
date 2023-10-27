@@ -51,7 +51,12 @@ public class pila {
         return nombreb;
     }
     public void productoexpirado(){
-        
+        String fecha = principalController.fecha;
+        for (productos eliminar : pila){
+            if(eliminar.vence.equals(fecha)){
+                pila.remove(eliminar);
+            }
+        }
     }
     public void buscarFechal(String fechal){
         productos fechalb = new productos();

@@ -9,15 +9,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="771.0" style="-fx-background-color: #DADF79;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="tiendajavafx.principalController">
+<AnchorPane id="AnchorPane" fx:id="evento" prefHeight="488.0" prefWidth="771.0" style="-fx-background-color: #DADF79;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="tiendajavafx.principalController">
    <children>
-      <TableView layoutX="47.0" layoutY="172.0" prefHeight="213.0" prefWidth="585.0">
+      <TableView fx:id="tabla" layoutX="47.0" layoutY="172.0" prefHeight="213.0" prefWidth="585.0">
         <columns>
-          <TableColumn prefWidth="117.0" text="ID" />
-          <TableColumn prefWidth="117.0" text="Nombre" />
-            <TableColumn prefWidth="117.0" text="Fecha Lote" />
-            <TableColumn prefWidth="117.0" text="Fecha Vencimiento" />
-            <TableColumn prefWidth="117.0" text="Precio" />
+          <TableColumn fx:id="idprodu" prefWidth="117.0" text="ID" />
+          <TableColumn fx:id="nomprodu" prefWidth="117.0" text="Nombre" />
+            <TableColumn fx:id="lote" prefWidth="117.0" text="Fecha Lote" />
+            <TableColumn fx:id="vence" prefWidth="117.0" text="Fecha Vencimiento" />
+            <TableColumn fx:id="precio" prefWidth="117.0" text="Precio" />
         </columns>
       </TableView>
       <Button layoutX="671.0" layoutY="429.0" mnemonicParsing="false" text="Cerrar" />
@@ -33,11 +33,11 @@
           <MenuItem mnemonicParsing="false" text="Action 2" />
         </items>
       </MenuButton>
-      <TextField layoutX="81.0" layoutY="27.0" />
-      <TextField layoutX="81.0" layoutY="72.0" />
-      <TextField layoutX="336.0" layoutY="72.0" />
-      <TextField fx:id="vence" disable="true" editable="false" layoutX="336.0" layoutY="138.0" />
-      <TextField fx:id="lote" disable="true" editable="false" layoutX="81.0" layoutY="138.0" />
+      <TextField fx:id="tid" layoutX="81.0" layoutY="27.0" onKeyTyped="#eventob" />
+      <TextField fx:id="tprecio" layoutX="81.0" layoutY="72.0" onKeyTyped="#eventob" />
+      <TextField fx:id="tnombre" layoutX="336.0" layoutY="72.0" onKeyTyped="#eventob" />
+      <TextField fx:id="tvence" disable="true" editable="false" layoutX="336.0" layoutY="138.0" />
+      <TextField fx:id="tlote" disable="true" editable="false" layoutX="81.0" layoutY="138.0" />
       <Label layoutX="336.0" layoutY="48.0" text="Nombre" />
       <Label layoutX="82.0" layoutY="56.0" text="Precio" />
       <Label layoutX="83.0" layoutY="117.0" text="Fecha Lote" />
@@ -48,6 +48,6 @@
       <Button layoutX="136.0" layoutY="442.0" mnemonicParsing="false" text="+10" />
       <Button layoutX="82.0" layoutY="393.0" mnemonicParsing="false" text="-1" />
       <Button layoutX="130.0" layoutY="393.0" mnemonicParsing="false" text="-10" />
-      <Button layoutX="656.0" layoutY="185.0" mnemonicParsing="false" text="Registrar" />
+      <Button fx:id="registrar" layoutX="656.0" layoutY="185.0" mnemonicParsing="false" onAction="#evento" text="Registrar" />
    </children>
 </AnchorPane>
