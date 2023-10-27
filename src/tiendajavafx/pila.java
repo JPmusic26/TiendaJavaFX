@@ -50,6 +50,9 @@ public class pila {
         nombreb = null;
         return nombreb;
     }
+    public void productoexpirado(){
+        
+    }
     public void buscarFechal(String fechal){
         productos fechalb = new productos();
         int i = 0;
