@@ -23,6 +23,7 @@ public class pila {
             JOptionPane.showMessageDialog(null, "Ya existe un producto con este Nombre!");
         }else{
             pila.push(p);
+            principalController.Productos.add(p);
             JOptionPane.showMessageDialog(null, "Producto registrado!");
         }
     }

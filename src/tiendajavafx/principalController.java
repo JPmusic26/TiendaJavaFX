@@ -60,7 +60,7 @@ public class principalController implements Initializable {
     private TextField tlote, tvence, tid, tprecio, tnombre;
     
     @FXML
-    private Button registrar;
+    private Button registrar, m1dia, m10dias, M1dia, M10dias, cerrar;
     
     @FXML
     private void evento (ActionEvent e){
@@ -75,9 +75,66 @@ public class principalController implements Initializable {
             pilap.setPushProducto(p);
             tid.setText("");
             tnombre.setText("");
-            tlote.setText("");
-            tvence.setText("");
             tprecio.setText("");
+        }
+        if (evt.equals(m1dia)){
+            calendario.add(Calendar.DATE, -1);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            tlote.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+            fecha = tlote.getText();
+            calendario.add(Calendar.DATE, 31);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            tvence.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+            calendario.add(Calendar.DATE, -31);
+        }
+        if(evt.equals(m10dias)){
+            calendario.add(Calendar.DATE, -10);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            tlote.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+            fecha = tlote.getText();
+            calendario.add(Calendar.DATE, 31);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            tvence.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+            calendario.add(Calendar.DATE, -31);
+        }
+        if(evt.equals(M1dia)){
+            calendario.add(Calendar.DATE, 1);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            tlote.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+            fecha = tlote.getText();
+            calendario.add(Calendar.DATE, 31);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            tvence.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+            calendario.add(Calendar.DATE, -31);
+        }
+        if(evt.equals(M10dias)){
+            calendario.add(Calendar.DATE, 10);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            tlote.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+            fecha = tlote.getText();
+            calendario.add(Calendar.DATE, 31);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            tvence.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+            calendario.add(Calendar.DATE, -31);
+        }
+        if(evt.equals(cerrar)){
+            System.exit(0);
         }
     }
     
@@ -110,6 +167,7 @@ public class principalController implements Initializable {
         mes = calendario.get(Calendar.MONTH);
         año = calendario.get(Calendar.YEAR);
         tlote.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+        fecha = tlote.getText();
         idprodu.setCellValueFactory(new PropertyValueFactory<productos, String>("idprodu"));
         nomprodu.setCellValueFactory(new PropertyValueFactory<productos, String>("nomprodu"));
         lote.setCellValueFactory(new PropertyValueFactory<productos, String>("lote"));
