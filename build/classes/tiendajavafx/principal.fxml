@@ -21,13 +21,16 @@
         </columns>
       </TableView>
       <Button fx:id="cerrar" layoutX="671.0" layoutY="429.0" mnemonicParsing="false" onAction="#evento" text="Cerrar" />
-      <MenuButton layoutX="621.0" layoutY="59.0" mnemonicParsing="false" text="MenuButton">
+      <MenuButton layoutX="621.0" layoutY="59.0" mnemonicParsing="false" text="Busqueda">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem fx:id="bid" mnemonicParsing="false" onAction="#eventoc" text="ID" />
+            <MenuItem fx:id="bnom" mnemonicParsing="false" onAction="#eventoc" text="Nombre" />
+            <MenuItem fx:id="bflote" mnemonicParsing="false" onAction="#eventoc" text="Fecha lote" />
+            <MenuItem fx:id="bfvence" mnemonicParsing="false" onAction="#eventoc" text="Fecha vencimiento" />
+          <MenuItem fx:id="bprecio" mnemonicParsing="false" onAction="#eventoc" text="Precio" />
         </items>
       </MenuButton>
-      <MenuButton layoutX="621.0" layoutY="100.0" mnemonicParsing="false" text="MenuButton">
+      <MenuButton layoutX="621.0" layoutY="100.0" mnemonicParsing="false" text="Promedios">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />

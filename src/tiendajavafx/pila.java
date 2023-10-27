@@ -56,6 +56,7 @@ public class pila {
         for (productos eliminar : pila){
             if(eliminar.vence.equals(fecha)){
                 pila.remove(eliminar);
+                principalController.Productos.remove(eliminar);
             }
         }
     }
@@ -71,6 +72,7 @@ public class pila {
                                                     + "Fecha lote: " + fechalb.lote + "\n"
                                                     + "Fecha vencimiento: " + fechalb.vence + "\n"
                                                     + "Precio: " + fechalb.precio);
+                i++;
             }
         }
     }
@@ -86,6 +88,7 @@ public class pila {
                                                     + "Fecha lote: " + venceb.lote + "\n"
                                                     + "Fecha vencimiento: " + venceb.vence + "\n"
                                                     + "Precio: " + venceb.precio);
+                i++;
             }
         }
     }
@@ -101,6 +104,7 @@ public class pila {
                                                     + "Fecha lote: " + preciob.lote + "\n"
                                                     + "Fecha vencimiento: " + preciob.vence + "\n"
                                                     + "Precio: " + preciob.precio);
+                i++;
             }
         }
     }

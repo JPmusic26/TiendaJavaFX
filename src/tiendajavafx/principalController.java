@@ -15,11 +15,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -63,6 +65,9 @@ public class principalController implements Initializable {
     private Button registrar, m1dia, m10dias, M1dia, M10dias, cerrar;
     
     @FXML
+    private MenuItem bid, bnom, bflote, bfvence, bprecio;
+    
+    @FXML
     private void evento (ActionEvent e){
         Object evt = e.getSource();
         if (evt.equals(registrar)){
@@ -90,6 +95,7 @@ public class principalController implements Initializable {
             año = calendario.get(Calendar.YEAR);
             tvence.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
             calendario.add(Calendar.DATE, -31);
+            pilap.productoexpirado();
         }
         if(evt.equals(m10dias)){
             calendario.add(Calendar.DATE, -10);
@@ -104,6 +110,7 @@ public class principalController implements Initializable {
             año = calendario.get(Calendar.YEAR);
             tvence.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
             calendario.add(Calendar.DATE, -31);
+            pilap.productoexpirado();
         }
         if(evt.equals(M1dia)){
             calendario.add(Calendar.DATE, 1);
@@ -118,6 +125,7 @@ public class principalController implements Initializable {
             año = calendario.get(Calendar.YEAR);
             tvence.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
             calendario.add(Calendar.DATE, -31);
+            pilap.productoexpirado();
         }
         if(evt.equals(M10dias)){
             calendario.add(Calendar.DATE, 10);
@@ -132,6 +140,7 @@ public class principalController implements Initializable {
             año = calendario.get(Calendar.YEAR);
             tvence.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
             calendario.add(Calendar.DATE, -31);
+            pilap.productoexpirado();
         }
         if(evt.equals(cerrar)){
             System.exit(0);
@@ -152,6 +161,43 @@ public class principalController implements Initializable {
                     e.consume();
                 }
             }
+        }
+    }
+    
+    @FXML
+    private void eventoc (ActionEvent e){
+        Object evt = e.getSource();
+        if(evt.equals(bid)){
+            String id = JOptionPane.showInputDialog("Ingrese el ID que desea buscar:");
+            productos idb = pilap.id(id);
+            JOptionPane.showMessageDialog(null, "El producto con la fecha lote buscada es:\n"
+                                                    + "ID: " + idb.idprodu + "\n"
+                                                    + "Nombre: " + idb.nomprodu + "\n"
+                                                    + "Fecha lote: " + idb.lote + "\n"
+                                                    + "Fecha vencimiento: " + idb.vence + "\n"
+                                                    + "Precio: " + idb.precio);
+        }
+        if(evt.equals(bnom)){
+            String nom = JOptionPane.showInputDialog("Ingrese el ID que desea buscar:");
+            productos nomb = pilap.nombre(nom);
+            JOptionPane.showMessageDialog(null, "El producto con la fecha lote buscada es:\n"
+                                                    + "ID: " + nomb.idprodu + "\n"
+                                                    + "Nombre: " + nomb.nomprodu + "\n"
+                                                    + "Fecha lote: " + nomb.lote + "\n"
+                                                    + "Fecha vencimiento: " + nomb.vence + "\n"
+                                                    + "Precio: " + nomb.precio);
+        }
+        if(evt.equals(bflote)){
+            String flote = JOptionPane.showInputDialog("Ingrese la fecha lote que desea buscar:");
+            pilap.buscarFechal(flote);
+        }
+        if(evt.equals(bfvence)){
+            String fvence = JOptionPane.showInputDialog("Ingrese la fecha de vencimiento que desea buscar:");
+            pilap.buscarFechal(fvence);
+        }
+        if(evt.equals(bprecio)){
+            float preciob = Float.parseFloat(JOptionPane.showInputDialog("Ingrese el precio del producto que desea buscar:"));
+            pilap.buscarprecio(preciob);
         }
     }
     
