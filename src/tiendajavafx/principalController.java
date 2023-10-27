@@ -65,7 +65,7 @@ public class principalController implements Initializable {
     private Button registrar, m1dia, m10dias, M1dia, M10dias, cerrar;
     
     @FXML
-    private MenuItem bid, bnom, bflote, bfvence, bprecio;
+    private MenuItem bid, bnom, bflote, bfvence, bprecio, prom, mprom, Mprom, may, men;
     
     @FXML
     private void evento (ActionEvent e){
@@ -198,6 +198,27 @@ public class principalController implements Initializable {
         if(evt.equals(bprecio)){
             float preciob = Float.parseFloat(JOptionPane.showInputDialog("Ingrese el precio del producto que desea buscar:"));
             pilap.buscarprecio(preciob);
+        }
+    }
+    
+    @FXML
+    private void eventod (ActionEvent e){
+        Object evt = e.getSource();
+        if (evt.equals(prom)){
+            float promedio = pilap.sacarpromedio();
+            JOptionPane.showMessageDialog(null, "El promedio del precio de los productos es: " + promedio);
+        }
+        if(evt.equals(Mprom)){
+            pilap.mayorprom();
+        }
+        if(evt.equals(mprom)){
+            pilap.menorprom();
+        }
+        if(evt.equals(may)){
+            pilap.mayorprecio();
+        }
+        if(evt.equals(men)){
+            pilap.menorprecio();
         }
     }
     
