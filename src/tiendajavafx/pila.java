@@ -130,4 +130,45 @@ public class pila {
             }
         }
     }
+    public void mayorprecio(){
+        productos mayor = new productos();
+        for (productos lista : pila){
+            if(lista.precio > mayor.precio){
+                mayor = lista;
+            }
+        }
+        for (productos lista : pila){
+            if(lista.precio == mayor.precio){
+                JOptionPane.showMessageDialog(null, "Los productos con mayor precio son:\n"
+                                                    + "ID: " + lista.idprodu + "\n"
+                                                    + "Nombre: " + lista.nomprodu + "\n"
+                                                    + "Fecha lote: " + lista.lote + "\n"
+                                                    + "Fecha vencimiento: " + lista.vence + "\n"
+                                                    + "Precio: " + lista.precio);
+            }
+        }
+    }
+    public void menorprecio(){
+        productos mayor = new productos();
+        for (productos may : pila){
+            if(may.precio > mayor.precio){
+                mayor = may;
+            }
+        }
+        for (productos men : pila){
+            if(men.precio < mayor.precio){
+                mayor = men;
+            }
+        }
+        for (productos lista : pila){
+            if(lista.precio == mayor.precio){
+                JOptionPane.showMessageDialog(null, "Los productos con mayor precio son:\n"
+                                                    + "ID: " + lista.idprodu + "\n"
+                                                    + "Nombre: " + lista.nomprodu + "\n"
+                                                    + "Fecha lote: " + lista.lote + "\n"
+                                                    + "Fecha vencimiento: " + lista.vence + "\n"
+                                                    + "Precio: " + lista.precio);
+            }
+        }
+    }
 }
